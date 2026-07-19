@@ -1,15 +1,3 @@
-"""
-Room 2: Statistical anomaly detection.
-
-Builds a numerical feature matrix from the accident record and its
-linked sub-sheets, then scores every record with four unsupervised
-detectors (Isolation Forest, Local Outlier Factor, autoencoder, ECOD)
-and reports their consensus.
-
-Input : ARI workbook (sheets General, Veh, Pass, Ped)
-Output: room2_scores.csv
-"""
-
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
