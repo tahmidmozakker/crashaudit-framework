@@ -1,16 +1,3 @@
-"""
-Room 3: Composite reliability scoring.
-
-Fuses the outputs of Room 1 and Room 2, together with field
-incompleteness and narrative-boilerplate duplication, into a single
-0-100 reliability score per record. Reports both equal and entropy
-weighting schemes and a Dirichlet-based sensitivity sweep.
-
-Input : ARI workbook (sheets General, Factors); room1_audit_matrix.csv;
-        room2_scores.csv
-Output: room3_scores.csv
-"""
-
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
