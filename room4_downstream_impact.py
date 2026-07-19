@@ -1,15 +1,3 @@
-"""
-Room 4: Downstream impact analysis with placebo control.
-
-Compares a raw cohort against a reliability-filtered cohort across four
-standard crash-analysis tasks, benchmarking every comparison against a
-placebo control (equal-size random record removal) to separate genuine
-data-quality effects from sample-size artifacts.
-
-Input : ARI workbook (sheet General); room3_scores.csv
-Output: printed summary tables (see functions below for programmatic use)
-"""
-
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
