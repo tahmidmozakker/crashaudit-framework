@@ -1,15 +1,3 @@
-"""
-Shield 1: Synthetic error-injection benchmark.
-
-Draws high-reliability, zero-flag records, injects five known error
-types into copies of them, re-runs the framework blind on the augmented
-dataset, and measures detection performance against the known ground
-truth.
-
-Input : ARI workbook; room1_audit_matrix.csv; room3_scores.csv
-Output: printed detection summary and AUC
-"""
-
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
