@@ -1,16 +1,3 @@
-"""
-Shield 2: Blind human adjudication.
-
-Generates a stratified, blinded, plain-language sample for independent
-human rating, and scores completed rating sheets against the stratum
-key: inter-rater agreement (Cohen's kappa), per-stratum problematic
-rate, and detection-layer precision/recall against human judgment.
-
-Usage:
-    python shield2_adjudication_generator.py generate
-    python shield2_adjudication_generator.py score rater1.xlsx rater2.xlsx
-"""
-
 import sys
 
 import numpy as np
