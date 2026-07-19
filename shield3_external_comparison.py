@@ -1,19 +1,3 @@
-"""
-Shield 3: External comparison.
-
-Compares the database's own yearly recorded deaths and accident counts
-against three independent references: the Global Burden of Disease
-(GBD) study, WHO Global Status Report anchors, and official police FIR
-statistics from the national transport authority (same-source
-completeness check).
-
-Input : ARI workbook (sheets General, Veh, Pass, Ped); GBD results CSV;
-        WHO estimates (hard-coded constants, see WHO_ESTIMATES below);
-        official police series (hard-coded constants, see
-        POLICE_SERIES below -- verify against the source portal before use)
-Output: printed comparison tables
-"""
-
 import pandas as pd
 
 PATH = "2006_to_2015.xlsx"
