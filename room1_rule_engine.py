@@ -1,15 +1,3 @@
-"""
-Room 1: Logical consistency engine.
-
-Checks every accident record against the legal code sets defined on
-Bengal Form 403Q (Regulation 254(b)), detects identifier collisions and
-duplicate records, cross-checks declared vs. actual sub-record counts,
-and flags in-record contradictions.
-
-Input : ARI workbook (sheets General, Veh, Pass, Ped, Factors)
-Output: room1_audit_matrix.csv
-"""
-
 import datetime as dt
 import pandas as pd
 
