@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>জমির পরিমাপ</title>
+<meta name="description" content="বাংলাদেশের জমির একক রূপান্তর — কাঠা, বিঘা, শতাংশ, কানি, একর, হেক্টর — সঙ্গে পূর্ণ পরিমাপ তালিকা ও দলিলের পরিভাষা। অফলাইনেও চলে।">
+<meta name="theme-color" content="#0d5c3f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="জমির পরিমাপ">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <h1>জমির পরিমাপ</h1>
+    <button id="digitToggle" class="ghost-btn" type="button" title="সংখ্যার অঙ্ক বদলান">১২৩</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= রূপান্তর ================= -->
+  <section id="tab-convert" class="tab is-active">
+    <div class="card input-card">
+      <label class="field">
+        <span class="field-label">পরিমাণ</span>
+        <input id="amount" type="text" inputmode="decimal" autocomplete="off"
+               value="1" placeholder="যেমন ৫ বা 5.5">
+      </label>
+      <label class="field">
+        <span class="field-label">একক</span>
+        <select id="unit"></select>
+      </label>
+      <div id="chips" class="chips"></div>
+      <p id="unitNote" class="note" hidden></p>
+    </div>
+
+    <p class="section-head">সমান হয়<span id="basisText"></span></p>
+    <div id="results"></div>
+    <p class="fineprint">যেকোনো ফলে চাপ দিলে সংখ্যাটি কপি হয়ে যাবে।</p>
+  </section>
+
+  <!-- ================= তালিকা ================= -->
+  <section id="tab-tables" class="tab">
+    <div class="card search-card">
+      <input id="tableSearch" type="search" placeholder="তালিকায় খুঁজুন — কাঠা, বর্গফুট, একর…" autocomplete="off">
+    </div>
+    <p class="section-head">জমির পরিমাণ সম্পর্কে গুরুত্বপূর্ণ ধারণা</p>
+    <div id="tables"></div>
+    <p id="noMatch" class="empty" hidden>এই শব্দে কিছু পাওয়া যায়নি।</p>
+    <p class="section-head">হিসাবের গরমিল</p>
+    <p class="fineprint">প্রচলিত তালিকায় কিছু সংখ্যা একে অপরের সঙ্গে মেলে না। উপরের তালিকায় সেগুলো ঠিক করে দেওয়া হয়েছে, আর কী বদলাল তা এখানে খোলাসা করা হলো।</p>
+    <ul id="caveats" class="caveats"></ul>
+  </section>
+
+  <!-- ================= পরিভাষা ================= -->
+  <section id="tab-terms" class="tab">
+    <p class="section-head">জেনে নিন — দলিল ও রেকর্ডের পরিভাষা</p>
+    <div id="glossary"></div>
+    <p class="fineprint">এগুলো সাধারণ ধারণা দেওয়ার জন্য। নির্দিষ্ট জমির দলিল বা মামলার ব্যাপারে ভূমি অফিস বা আইনজীবীর পরামর্শ নিন।</p>
+  </section>
+
+  <!-- ================= অ্যাপ ================= -->
+  <section id="tab-about" class="tab">
+    <p class="section-head">ফোনে অ্যাপ হিসেবে রাখুন</p>
+    <div class="card">
+      <button id="installBtn" class="install-btn" type="button" hidden>হোম স্ক্রিনে ইনস্টল করুন</button>
+      <p id="installedMsg" class="note" hidden>অ্যাপটি ইনস্টল করা আছে। ✓</p>
+      <h3>অ্যান্ড্রয়েড — Chrome</h3>
+      <ol>
+        <li>ডান পাশের উপরে ⋮ মেনুতে চাপ দিন।</li>
+        <li>“Install app” বা “Add to Home screen” বাছুন।</li>
+        <li>“Install” চাপুন — আইকনটি হোম স্ক্রিনে বসে যাবে।</li>
+      </ol>
+      <h3>আইফোন — Safari</h3>
+      <ol>
+        <li>নিচের শেয়ার বোতামে (□↑) চাপ দিন।</li>
+        <li>“Add to Home Screen” বাছুন, তারপর “Add”।</li>
+      </ol>
+      <p class="note">একবার খুললেই পুরো অ্যাপ ফোনে জমা থাকে — পরে ইন্টারনেট ছাড়াও চলবে।</p>
+    </div>
+
+    <p class="section-head">এই অ্যাপ সম্পর্কে</p>
+    <div class="card">
+      <p>রূপান্তরের সব হিসাব বর্গফুটকে ভিত্তি ধরে করা, তাই এককগুলো নিজেদের মধ্যে সঙ্গতিপূর্ণ থাকে —
+        ১ কাঠা = ৭২০ বর্গফুট, ২০ কাঠা = ১ বিঘা, ১ শতাংশ = ৪৩৫.৬ বর্গফুট, ১ একর = ১০০ শতাংশ,
+        ১ কানি = ২৪ কাঠা = ২০ গন্ডা।</p>
+      <p>জমির স্থানীয় নাম ও মাপ অঞ্চলভেদে বদলায় — বিশেষ করে কানি, গন্ডা আর বিঘা। দলিল বা জরিপের কাজে
+        স্থানীয় ভূমি অফিসের হিসাব চূড়ান্ত।</p>
+      <p class="note" id="verLine"></p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tabbar">
+  <button class="tabbtn is-active" data-tab="tab-convert" type="button"><span>রূপান্তর</span></button>
+  <button class="tabbtn" data-tab="tab-tables" type="button"><span>তালিকা</span></button>
+  <button class="tabbtn" data-tab="tab-terms" type="button"><span>পরিভাষা</span></button>
+  <button class="tabbtn" data-tab="tab-about" type="button"><span>অ্যাপ</span></button>
+</nav>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
